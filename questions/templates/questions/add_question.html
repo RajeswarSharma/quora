@@ -1,0 +1,18 @@
+{% extends "home/home.html" %}
+{% load static %}
+
+{% block main_body %}
+  {{ request.user.username}}
+  <div class="new-q">
+    <link rel="stylesheet" href="{% static 'questions/style.css' %}">
+      <form action="" method="post" id = "questionForm">
+        {% csrf_token %}  
+        <textarea placeholder="Enter the question title" name="question_title" id="txt-q" cols="70" rows="5" form="questionForm" ></textarea><br>
+        <textarea placeholder="Write your question here." name="question_text" id="txt-q" cols="70" rows="20" form="questionForm" ></textarea><br>
+        <input name = "tags" type="text"  id="hashtags" placeholder="add tags separated by commas(,)."><br>
+        <input type="button" id="cancel-btn" onclick="window.location.href='/'" value="Cancel">
+        <input type="submit" id="submit-btn">
+      </form>
+  </div>
+
+{% endblock %}

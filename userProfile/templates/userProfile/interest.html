@@ -1,0 +1,37 @@
+{% extends "home/home.html" %}
+{% load static %}
+{% block main_body %}
+<link rel="stylesheet" href="{% static 'userProfile/style.css'%}">
+
+<div class="select-tags">
+    
+    <h3>Select Tags to follow</h3>
+    {% for tag in tags %}
+    <input  type="button" class="tags" id="{{tag}}" value="{{tag}}" onclick="addtoArray({{tag}})">     
+    {% endfor %}
+   
+</div>
+<br>
+
+<hr>
+<div class="custom-wrapper">
+    <div class="custom-left">
+       Selected tags 
+    </div>
+    <div class="custom-right">
+        <button id="next-btn">Next</button>
+        <input type="button" value="Add" id="add-custom-tag" style="float: right;">
+        <input type="text" name="" id="custom-tags" style="float: right;">
+    </div>
+    <br>
+    <br>
+</div>
+<div id="addedTags"> </div>  
+<script>var optional_tags=JSON.parse("{{json_optional_tags}}".replace(/&quot;/g,'"'))</script>
+<script src="{% static 'userProfile/main.js' %}"></script>
+<script > autocomplete(document.getElementById("custom-tags"))</script> 
+<form id="interest" action="" method="POST" name="interest">
+{% csrf_token %}
+</form> 
+
+{% endblock %}

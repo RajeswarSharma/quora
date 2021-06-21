@@ -1,0 +1,42 @@
+{%extends 'home/home.html'%}
+{% load static %}
+
+{% block main_body %}
+    <link rel="stylesheet" href="{% static 'questions/style.css' %}">
+    <div class="topic-wrapper">
+        <div class="topic">
+          <h1>{{tag}}</h1>
+          <div class="follow-btn">
+               <form action=""  method="POST">
+                   {% csrf_token %}
+                {% ifequal isfollowing 1%}
+                <button type="submit" class="btnf" id="uf"name="btnf" value="unfollow">Unfollow</button>
+                {%else%}
+                <button type="submit" class="btnf" id="f" name="btnf" value="follow">Follow</button>
+                {% endifequal %}
+                </form>
+            </div>
+        </div>
+        <div class="topic-info">
+            Number of question on this topic : {{questions|length}}
+        </div>
+          
+    </div>
+    <hr>
+    {% for question in questions %}
+    
+    <div class="question-wrapper">
+        <div class="question-title">
+          <a class="q-link" href="{% url 'questions:question_details' question.id %}"> {{ question.question_title }} </a>
+        </div>
+        <div class="question-info">
+         <a href="{% url 'profile:profile' question.author %}" style="text-decoration: none; color: black; " >  <div class="info" id="author">{{question.author}}</div></a>
+        </div>
+        <div class="r-info">
+            <div class="info" id="publish-date">{{question.pub_date}}</div>
+            <div class="info" id="ans-no"> Answers {{question.comments_set.all|length}}</div>
+        </div>
+    </div>   
+        
+    {% endfor %}
+{% endblock %}

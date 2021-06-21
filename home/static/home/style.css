@@ -1,0 +1,118 @@
+body {
+  text-align: center;
+  background-color: #f1f2f2;
+}
+.topnav {
+  /* position: fixed; */
+  top: 0;
+  width: 100%;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0px 3px 4px #00000063;
+}
+.in-nav {
+
+width: 70%;
+margin: auto;
+ 
+}
+.left-nav a {
+  display: block;
+  float: left;
+  text-align: center;
+  padding: 14px 16px;
+  transition: 0.5s;
+
+}
+.left-nav a:hover {
+  background-color: rgba(139, 139, 139, 0.651);
+}
+.right-nav {
+  padding: 10px 16px;
+  display: inline-flex;
+  float: right;
+  text-align: center;
+}
+
+#search-input {
+  padding: 8px 20px;
+  width: 300px;
+}
+.add-q {
+  margin-left: 8px;
+  font-weight: bold;
+  background-color: #b92b27;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+}
+
+.nav-ico:hover {
+  filter: invert(10%) sepia(100%) saturate(6023%) hue-rotate(32deg)
+    brightness(96%) contrast(101%);
+}
+
+.main-body {
+  margin-top: 2%;
+  padding: 20px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+.logout-btn {
+  margin-left: 8px;
+  font-weight: bold;
+  background-color: #277fb9;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+}
+.h-question-wrapper{
+  margin-top: none;
+  margin-bottom: 4px;
+  background-color: rgba(235, 235, 235, 0.473);
+  text-align: left;
+  font-family:sans-serif;
+  padding: 6px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+.h-q-info{
+  display:inline-grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+}
+.h-q-details{
+  color: rgb(70, 70, 70);
+  width: fit-content;
+  font-weight: normal;
+  font-size: small;
+  padding: 5px;
+  background-color: rgb(218, 214, 214);
+  border-radius: 10px;
+}
+
+.h-a{
+  text-decoration: none;
+  color: black;
+}
+.h-a:hover{
+  text-decoration: underline;
+}
+
+.p-a{
+  text-decoration: none;
+  color: black;
+}
+.p-a:hover{
+  color: white;
+}
+#h-author:hover{
+  background-color: rgb(112, 112, 112);
+  
+}

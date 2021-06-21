@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
+    {% block title%}
+    <title>Quora</title>
+    {% endblock %}
+</head>
+<body>
+    <div class="topnav" style="position: relative;">
+      <div class="in-nav">
+            <div class="left-nav">
+            <a href="/">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Quora_logo_2015.svg" alt="" style="width:87px;">
+            </a>
+            <a href="/">
+                <img class="nav-ico" src="{% static 'home/svg/home.svg' %}" alt="">
+            </a>
+            <a href="{% url 'profile:profile' request.user %}">
+                <img class="nav-ico" src="{% static 'home/svg/following.svg' %}" alt="">
+            </a>
+            <a href="{% url 'questions:add_question'%}">
+                <img class="nav-ico" src="{% static 'home/svg/answer.svg' %}" alt="">
+            </a>
+         
+        </div>
+        <div class="right-nav">
+                <input id="search-input"type="text" name="search" placeholder="Search quora (Hit enter to search)">
+                <script>
+                    var elem = document.getElementById("search-input")
+                    elem.addEventListener("keyup",function(e){
+                        if(e.keyCode==13)
+                        {
+                             var text = elem.value
+                            url = "{% url 'questions:topic' tag=123 %}".replace("/123/","/"+text)
+                            window.location.href=url
+                      
+                                                    }
+                    })
+                </script>
+            
+            <button class="add-q" onclick="window.location.href='{% url 'questions:add_question' %}'">Add question</button>
+            <button class="logout-btn" onclick="window.location.href='{% url 'home:logout' %}'">Logout</button>
+        </div>
+      </div>
+    </div>
+    <div class="main-body" >
+    {% block main_body %}
+        {% for question in questions%}
+        <div class="h-question-wrapper">
+            <div class="h-question-title"><a class="h-a"href="{% url 'questions:question_details' question.id %}">{{question.question_title}}</a></div>
+            <div class="h-q-info">
+                <div class="h-q-details" id="h-author"><a class="p-a"href="{% url 'profile:profile' question.author %}">{{question.author}}</a></div>
+                <div class="h-q-details" id="h-date">{{question.pub_date}}</div>
+                <div class="h-q-details" id="h-n-ans">Answers {{question.comments_set.all|length}} </div>
+            </div>
+        </div>   
+        {% endfor %}
+    {% endblock %}
+    </div>
+  
+</body>
+</html>

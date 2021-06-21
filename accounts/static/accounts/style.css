@@ -1,0 +1,42 @@
+body {
+  background-image: url("https://qsf.fs.quoracdn.net/-4-ans_frontend_assets.images.home_page_bg_desktop.png-26-4770753d59b970e1.png");
+  text-align: center;
+  align-content: center;
+}
+#tagline {
+  font-weight: bold;
+}
+.outer-box {
+  background-color: white;
+  width: 60%;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 10;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+  padding-bottom: 5%;
+  box-shadow: 5px 8px 5px #00000070;
+}
+
+.reg-input {
+  width: 30%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  background-color: #2e69ff;
+  border-radius: 25px;
+  font-size: medium;
+  color: white;
+  border: none;
+  padding: 12px 32px;
+}
+
+.validation-err{
+    color: rgb(204, 21, 15);
+}

@@ -1,0 +1,62 @@
+{% extends "home/home.html" %}
+{% load static %}
+{% block main_body  %}
+
+<link rel="stylesheet" href="{% static 'userProfile/profile.css'%}">
+<div class="top-prof">
+    <div class="dp">
+        <img class="dp-img" src="{% static 'userProfile/sample_pic.jpg' %}" alt="">
+    <div class="username"><h2>{{user.username}}</h2></div>
+    </div>
+</div>
+<div class="bio-wrapper">
+    <div class="bio" id="bio-txt">{{bio}}</div> 
+    
+</div>
+<hr class="first-hr">
+<div class="tabs">
+    <div class="tab-bars">
+        <div class="inner-tab active" id="ques" onclick="activate(this,0)">Quesitons</div>
+        <div class="inner-tab" id="ans" onclick="activate(this,1)" >Answers</div>
+        <div class="inner-tab" id="following" onclick="activate(this,2)">Followings</div>
+    </div>
+    
+
+    <hr style="margin-top:0 ;border: none;">
+    <div class="tab-details"></div>
+<script src="{% static 'userProfile/profile.js' %}"></script>
+</div>
+<div class="details" id="ques-details" style="display: block;" >
+    {% for question in questions %}
+       <div class="d-data">
+           <a href="{% url 'questions:question_details' question.id  %}">{{question.question_title}}</a>
+            <div class="date">
+                    {{question.pub_date}}
+            </div>
+        </div> 
+
+    {% endfor %}
+</div>
+<div class="details" id="ans-details" style="display: none;" >
+    {% for answer in answers %}
+       <div class="d-data">
+           <a href="{% url 'questions:question_details' answer.question.id  %}">{{answer}}</a>
+            <div class="date">
+                    {{answer.pub_date}}
+            </div>
+        </div> 
+
+    {% endfor %}
+</div>
+<div class="details" id="following-details" style="display: none;">
+    <div class="f-data">
+        {% for tag in following %}
+        <div class="tag">
+          <a href="{% url 'questions:topic' tag %}">  {{tag}} </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="details" id="ans-details" style="display: none;" >  </div>
+<div class="details" id="following-details" style="display: none;" >  </div>
+{%endblock%}

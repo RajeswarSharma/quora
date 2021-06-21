@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignUp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'accounts/style.css' %}">
+
+  </head>
+  <body>
+      <div class="outer-box">
+        <img src="https://download.logo.wine/logo/Quora/Quora-Logo.wine.png" alt="" style="width: 202px;"> 
+        <div id="tagline">
+          Welcome to quora-clone made by Rajeswar Sharma
+        </div> 
+      <form action="" name="regform" onsubmit="return formValidation()" method="POST">
+          {% csrf_token %}
+        <span > Sign Up</span><br>
+        <hr style="width: 30%; margin-left: auto; margin-right: auto;background-color: black;">
+        <input class="reg-input" type="text" name="first_name" placeholder="First Name" required /><br />
+        <input class="reg-input" type="text" name="last_name" placeholder="Last Name" required/><br />
+        <input  class="reg-input"type="text" name="username" placeholder="Username" required/><br />
+        <input  class="reg-input"type="email" name="email" placeholder="Email" required/><br />
+        <input  class="reg-input"type="password" name="password1" placeholder="Password" required/><br />
+        <input  class="reg-input"type="password" name="password2" placeholder="Confirm password" required/><br />
+         <div class="validation-err">
+         {% for message in messages %}
+         <span> {{message}} </span>
+         {% endfor %}
+      </div>
+        <input class="reg-submit"type="submit" name="submit" />
+      </form>
+     
+      </div>
+       <script>
+        function formValidation()
+        {
+            var first_name = document.forms["regform"]["first_name"].value;
+            var last_name = document.forms["regform"]["last_name"].value;
+            var username = document.forms["regform"]["username"].value;
+            var email = document.forms["regform"]["email"].value;
+            var pass1 = document.forms["regform"]["password1"].value;
+            var pass2 = document.forms["regform"]["password2"].value;
+            
+            if(first_name==""||last_name==""||username==""||email==""||pass1==""||pass2=="")
+            {
+                alert("Invalid data")
+                return false
+            }
+        }
+    </script>
+    </div>
+    </div>
+   
+  </body>
+</html>

@@ -1,0 +1,130 @@
+h3{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+.tags{
+    margin: 3px;
+    background-color: rgb(155, 155, 155) ;
+    padding: 5px;
+    text-align: center;
+    border-radius: 12px;
+    overflow-wrap: normal;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: 0.3s;
+    outline: none;
+    border: none;
+   
+}
+.selected{
+     margin: 3px;
+    background-color: rgb(83, 81, 81) ;
+    padding: 5px;
+    text-align: center;
+    border-radius: 12px;
+    overflow-wrap: normal;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: 0.3s;
+    outline: none;
+    border: none;
+}
+
+.select-tags{
+    margin-top: 10px;
+}
+
+.span-slct{
+   margin: 3px;
+   font-size: small;
+    background-color: rgb(61, 63, 194) ;
+    padding: 5px;
+    text-align: center;
+    border-radius: 12px;
+    overflow-wrap: normal;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: 0.3s;
+    outline: none;
+    border: none;   
+}
+ #add-custom-tag{
+     
+   color: white;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   background-color: #B92B27;
+   border: none;
+   margin:auto;
+   padding: 12px;
+   border-radius: 18px;
+   vertical-align: middle;
+
+} 
+#custom-tags{
+    vertical-align: middle;
+    padding: 10px;
+    margin-right: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#addedTags{
+
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.custom-wrapper{
+
+    display: inline;
+}
+.custom-left{
+    margin: 6px;
+    float: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+.custom-right{
+   
+    text-align: center;
+    float: right;
+}
+
+#next-btn{
+   margin-left: 5px;
+   background-color: #277FB9;
+   color: white;
+   border: none;
+   padding: 12px;
+   border-radius: 16px;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   float: right;
+}
+#suggestion-div{
+    width: 60%;
+    position: inherit;
+    margin-top: 15%;
+    background-color: rgb(207, 204, 204);
+    border: 1px solid rgb(78, 78, 78);
+    border-top: none;
+}
+.suggestion{
+    word-wrap: break-word;
+    padding: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-top: 1px solid rgb(78, 78, 78);
+    border-bottom: none;
+    transition: 0.5s;
+}
+
+.suggestion:hover{
+background-color: rgb(66, 65, 65);
+color: white;
+}
+
+.active{
+    background-color: rgb(66, 65, 65);
+    color: white;
+}
