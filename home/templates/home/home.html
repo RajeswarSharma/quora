@@ -17,13 +17,13 @@
             <a href="/">
             <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Quora_logo_2015.svg" alt="" style="width:87px;">
             </a>
-            <a href="/">
+            <a href="/" title="Home">
                 <img class="nav-ico" src="{% static 'home/svg/home.svg' %}" alt="">
             </a>
-            <a href="{% url 'profile:profile' request.user %}">
+            <a href="{% url 'profile:profile' request.user %}" title="Profile">
                 <img class="nav-ico" src="{% static 'home/svg/following.svg' %}" alt="">
             </a>
-            <a href="{% url 'questions:add_question'%}">
+            <a href="{% url 'questions:add_question'%}" title="Ask quora">
                 <img class="nav-ico" src="{% static 'home/svg/answer.svg' %}" alt="">
             </a>
          
