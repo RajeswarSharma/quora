@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-(c1sxmxhzz)z0x=%19lvwhfznn#1@ym#wl-d=k-d9m0t2f3n#n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['quora-clone-by-rj.herokuapp.com']
 
