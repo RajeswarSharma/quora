@@ -97,7 +97,7 @@ textarea {
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
-#rply-submit-btn {
+.rply-submit-btn {
     border-radius: 12px;
     padding: 7px;
   background-color: rgb(62, 62, 230);
