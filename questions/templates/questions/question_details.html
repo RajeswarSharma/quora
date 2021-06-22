@@ -28,8 +28,8 @@
                   <form action=""  name="reply-frm" onclick="return replyval()" method="post" id = "{{comment.id}}">
                       {% csrf_token %}  
                       <input type="hidden" name="cmnt_id" value={{comment.id}}>
-                      <textarea placeholder="Reply" name="reply_text" id="txt-r" cols="80" rows="10" form={{comment.id}} ></textarea><br>
-                      <input value="Add comment" type="submit" id="rply-submit-btn" name="reply" form={{comment.id}}>
+                      <textarea placeholder="Reply" name="reply_text" class="txt-r" cols="80" rows="10" form={{comment.id}} ></textarea><br>
+                      <input value="Add comment" type="submit" class="rply-submit-btn" name="reply" form={{comment.id}}>
                     </form>
                     {% if comment.replies_set.all %}
                       {% for reply in comment.replies_set.all %}
