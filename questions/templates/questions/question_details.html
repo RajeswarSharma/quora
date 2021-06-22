@@ -25,7 +25,7 @@
               <button type="button" class="collapsible">Replies</button>
               <div class="content">
                   <p>      
-                  <form action=""  name="reply-frm" onclick="return replyval()" method="post" id = "{{comment.id}}">
+                  <form action=""  name="reply-frm"  method="post" id = "{{comment.id}}">
                       {% csrf_token %}  
                       <input type="hidden" name="cmnt_id" value={{comment.id}}>
                       <textarea placeholder="Reply" name="reply_text" class="txt-r" cols="80" rows="10" form={{comment.id}} ></textarea><br>
@@ -79,13 +79,5 @@ for (i = 0; i < coll.length; i++) {
       return false
     }
   }
-  function replyval()
-  {
-    var x = document.forms["reply-frm"]["reply_text"].value
-    if(x.trim()=="")
-    {
-      return false
-    }
-  }
-</script>
+ 
 {% endblock %}
