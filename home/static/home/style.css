@@ -1,11 +1,14 @@
+
 body {
   text-align: center;
   background-color: #f1f2f2;
+  min-width: 1000px;  
 }
 .topnav {
-  /* position: fixed; */
+  position: fixed; 
   top: 0;
-  width: 100%;
+  min-width: 1000px;
+  height: fit-content;
   background-color: white;
   overflow: hidden;
   box-shadow: 0px 3px 4px #00000063;
@@ -32,20 +35,28 @@ margin: auto;
   display: inline-flex;
   float: right;
   text-align: center;
+  width: 50%;
 }
 
 #search-input {
   padding: 8px 20px;
-  width: 300px;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 80%;
+  height: 10px;
 }
 .add-q {
+  text-align: center;
+  height: 30px;
+  width: 40%;
   margin-left: 8px;
-  font-weight: bold;
+  font-size: small;
   background-color: #b92b27;
   color: white;
   border: none;
-  padding: 8px 20px;
+ 
   border-radius: 20px;
+  white-space: nowrap;
 }
 
 .nav-ico:hover {
@@ -64,13 +75,17 @@ margin: auto;
   transition: 0.5s;
 }
 .logout-btn {
-  margin-left: 8px;
-  font-weight: bold;
+
   background-color: #277fb9;
+  height: 30px;
+  width: 30%;
+  margin-left: 8px;
+  font-size: small;
   color: white;
   border: none;
   padding: 8px 20px;
   border-radius: 20px;
+  white-space: nowrap;
 }
 .h-question-wrapper{
   margin-top: none;
@@ -116,3 +131,4 @@ margin: auto;
   background-color: rgb(112, 112, 112);
   
 }
+
